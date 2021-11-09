@@ -1,3 +1,4 @@
+import domain.Purchaselotto;
 import org.junit.jupiter.api.*;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.EmptySource;
@@ -18,31 +19,19 @@ import java.util.List;
 
 public class LottoTest {
 
-    private LottoNumber lottoNumber;
+
+    private Purchaselotto purchaselotto;
 
 
 
     @Test
-    void 생성(){
-        Assertions.assertEquals(14,lottoNumber.makearr(14));
-
+    void 문자열_정수형체크(){
+        Assertions.assertEquals(1000,purchaselotto.checkOtherType("1000"));
     }
 
     @Test
-    void 속성_일치테스트(){
-        int number=lottoNumber.makeLottoNoCollection(14).getNumber();
-        System.out.println(number);
-        Assertions.assertEquals(14,number);
-
+    void 음수값체크(){
+        Assertions.assertFalse(purchaselotto.checkMoney(-1));
     }
-
-
-
-    @Test
-    void 유효값_테스트(){
-        Assertions.assertThrows(IllegalArgumentException.class, ()->lottoNumber.makearr(50));
-    }
-
-
 
 }
