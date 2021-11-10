@@ -11,17 +11,14 @@ public class Application {
         InputView inputView=new InputView();
         outputView out=new outputView();
         LottoGenerator lottoGenerator=new LottoGenerator();
-
         out.startPrint();
         String str=inputView.InputUser();
 
         Purchaselotto purchaselotto=new Purchaselotto(str);
-
-        out.lottoCount(purchaselotto.totalLottoCount());
+        int count=purchaselotto.totalLottoCount();
+        out.lottoCount(count);
 
         out.lottoLinePrint(lottoGenerator.make());
-
-
 
 
     }

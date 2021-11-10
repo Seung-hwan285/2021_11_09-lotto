@@ -10,16 +10,16 @@ public class outputView {
         System.out.println("구입 금액을 입력해주세요");
     }
 
-
-
     // 로또 개수 출력
-    public void lottoCount(int lottoCnt){
+    public static void lottoCount(int lottoCnt){
         System.out.println(lottoCnt+"개 구매했습니다.");
     }
 
+    // 로또 한줄 출력
     public void lottoLinePrint(List<Integer> lottoList){
         System.out.println("로또 자동생성 출력");
-        System.out.println(new LottoGenerator().lineLottoOut(lottoList));
+        System.out.println(new LottoGenerator().lineLottoOut());
     }
+
 
 }
