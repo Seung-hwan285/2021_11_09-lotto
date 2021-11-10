@@ -1,3 +1,4 @@
+import domain.LottoGenerator;
 import domain.Purchaselotto;
 import view.InputView;
 import view.outputView;
@@ -9,6 +10,7 @@ public class Application {
 
         InputView inputView=new InputView();
         outputView out=new outputView();
+        LottoGenerator lottoGenerator=new LottoGenerator();
 
         out.startPrint();
         String str=inputView.InputUser();
@@ -16,5 +18,11 @@ public class Application {
         Purchaselotto purchaselotto=new Purchaselotto(str);
 
         out.lottoCount(purchaselotto.totalLottoCount());
+
+        out.lottoLinePrint(lottoGenerator.make());
+
+
+
+
     }
 }
