@@ -15,9 +15,6 @@ public class Application {
 
         Purchaselotto purchaselotto=new Purchaselotto(str);
 
-        System.out.println(str);
-
-
-
+        out.lottoCount(purchaselotto.totalLottoCount());
     }
 }

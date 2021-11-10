@@ -7,25 +7,38 @@ public class Purchaselotto {
      *  1. 숫자가 아닌 다른 타입일경우 예외
      *  2. 음수 또는 0을 입력했을때 예외
      *  3.  문자열 -> 정수형
+     *  4. 로또 구입 개수
+     *  5. 구입 금액 부족한지 확인
+     *
      */
 
+
+    // 수동으로 구매한 로또 가격
     private  static int Mymoney;
+
+    // 로또 최소 구매매 가격
+    private static final int lottoMoney=1000;
+
 
 
     public Purchaselotto(String money){
         int convertMoney=changeInteger(money);
-        if (checkMoney(convertMoney)){
 
+        if (checkMoney(convertMoney)){
             this.Mymoney=convertMoney;
         }
+        // 구입 금액 초과 확인
+        checkLottoMoneyLimit();
 
     }
+
 
     //1. 숫자가 아닌 다른 타입일
     public static int otherType(String money){
         try{
             Mymoney=changeInteger(money);
-        }catch(NumberFormatException e){
+        }
+        catch(NumberFormatException e){
             System.out.println("숫자만 입력해주세요");
         }
         return Mymoney;
@@ -44,6 +57,17 @@ public class Purchaselotto {
         return true;
     }
 
+    // 5. 구입 금액 부족한지 확인
+    public static void checkLottoMoneyLimit(){
+        if(Mymoney <lottoMoney){
+            System.out.println("최소"+lottoMoney+"원 이상 구입해야 합니다.");
+        }
+    }
+
+    // 4. 구입 개수 확인
+    public static int totalLottoCount(){
+        return Mymoney/lottoMoney;
+    }
 
 
 
