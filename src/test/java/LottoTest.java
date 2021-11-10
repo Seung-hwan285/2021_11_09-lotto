@@ -25,7 +25,7 @@ public class LottoTest {
 
     @Test
     void 로또truefalse테스트(){
-        assertFalse(purchaselotto.checkMoney(-0));
+        assertTrue(purchaselotto.checkMoney(1));
     }
 
     @Test

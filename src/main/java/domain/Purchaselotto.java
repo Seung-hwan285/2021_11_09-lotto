@@ -39,8 +39,7 @@ public class Purchaselotto {
     //2. 음수값 또는 0을 입력했을때 예외
     public static boolean checkMoney(int convertMoney){
         if(convertMoney<=0){
-            System.out.println(convertMoney+"원입니다. 돈을 지불하세요!!");
-            return false;
+            throw new IllegalArgumentException("원입니다. 돈을 지불하세요!!");
         }
         return true;
     }
