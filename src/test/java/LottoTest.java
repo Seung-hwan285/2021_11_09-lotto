@@ -16,22 +16,22 @@ import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 import java.util.*;
 import java.util.List;
-
+import static org.junit.jupiter.api.Assertions.*;
 public class LottoTest {
 
 
     private Purchaselotto purchaselotto;
 
 
-
     @Test
-    void 문자열_정수형체크(){
-        Assertions.assertEquals(1000,purchaselotto.checkOtherType("1000"));
+    void 로또truefalse테스트(){
+        assertFalse(purchaselotto.checkMoney(-0));
     }
 
     @Test
-    void 음수값체크(){
-        Assertions.assertFalse(purchaselotto.checkMoney(-1));
+    void 로또변환테스트(){
+        assertEquals(14,purchaselotto.otherType("14"));
     }
+
 
 }

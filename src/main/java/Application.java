@@ -1,5 +1,6 @@
 import domain.Purchaselotto;
 import view.InputView;
+import view.outputView;
 
 public class Application {
 
@@ -7,9 +8,16 @@ public class Application {
     public static void main(String[] args) {
 
         InputView inputView=new InputView();
-        String money=inputView.input();
-        Purchaselotto purchaselotto=new Purchaselotto(money);
+        outputView out=new outputView();
 
-        System.out.println(purchaselotto.getMymoney());
+        out.startPrint();
+        String str=inputView.InputUser();
+
+        Purchaselotto purchaselotto=new Purchaselotto(str);
+
+        System.out.println(str);
+
+
+
     }
 }

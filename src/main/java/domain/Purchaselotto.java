@@ -9,50 +9,43 @@ public class Purchaselotto {
      *  3.  문자열 -> 정수형
      */
 
-
-    private static final int lottoPrice= 1000;
-    private static int moneyInt;
-    private int Mymoney;
+    private  static int Mymoney;
 
 
     public Purchaselotto(String money){
-        int convertInput=checkOtherType(money);
+        int convertMoney=changeInteger(money);
+        if (checkMoney(convertMoney)){
 
-        if(checkMoney(convertInput)){
-            this.Mymoney=convertInput;
+            this.Mymoney=convertMoney;
         }
+
     }
 
-    // 3. 문자열 -> 정수형
-    public static int changeInteger(String money){
+    //1. 숫자가 아닌 다른 타입일
+    public static int otherType(String money){
+        try{
+            Mymoney=changeInteger(money);
+        }catch(NumberFormatException e){
+            System.out.println("숫자만 입력해주세요");
+        }
+        return Mymoney;
+    }
+
+    //3.  문자열 -> 정수형
+    private static int changeInteger(String money){
         return Integer.parseInt(money);
     }
 
-
-    // 2. 음수값 체크
-    public static boolean checkMoney(int convertInput){
-
-        if(convertInput <=0){
-            System.out.println("돈을 지불하세요!");
+    //2. 음수값 또는 0을 입력했을때 예외
+    public static boolean checkMoney(int convertMoney){
+        if(convertMoney<=0){
+            System.out.println(convertMoney+"원입니다. 돈을 지불하세요!!");
             return false;
         }
         return true;
     }
 
-    // 1. 숫자가 아닌 다른 타입일 경우
-    public static int checkOtherType(String money){
-
-        try{
-            moneyInt=changeInteger(money);
-        }
-        catch (NumberFormatException e){
-            System.out.println("정수형만 들어올 수 있습니다.");
-        }
-        return moneyInt;
-    }
 
 
-    public int getMymoney() {
-        return Mymoney;
-    }
+
 }

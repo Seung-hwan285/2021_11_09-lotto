@@ -4,12 +4,13 @@ import java.util.Scanner;
 
 public class InputView {
 
+    /**
+     * 콘솔에서 사용자 입력
+     */
 
     private static final Scanner sc=new Scanner(System.in);
 
-
-    public static String input(){
-        System.out.println("구입 금액을 입력하세요");
+    public String InputUser(){
         return sc.nextLine();
     }
 }
