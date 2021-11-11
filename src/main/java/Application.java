@@ -1,25 +1,41 @@
-import domain.LottoGenerator;
+import domain.Lotto;
+import domain.Lottos;
 import domain.Purchaselotto;
 import view.InputView;
 import view.outputView;
 
 public class Application {
 
-
     public static void main(String[] args) {
 
+        /**
+         *  로또전체 콘솔 담당
+         *    [] 돈 입력
+         *    [] 몇개 구매했는지 갯수
+         *    [] 갯수 출력
+         *    [] Lottos 객체 (갯수)
+         *    [] 모든 로또 출력하는 메서드
+         */
         InputView inputView=new InputView();
-        outputView out=new outputView();
-        LottoGenerator lottoGenerator=new LottoGenerator();
-        out.startPrint();
         String str=inputView.InputUser();
-
         Purchaselotto purchaselotto=new Purchaselotto(str);
-        int count=purchaselotto.totalLottoCount();
-        out.lottoCount(count);
+        outputView outputView=new outputView();
 
-        out.lottoLinePrint(lottoGenerator.make());
+        // [] 몇개 구매했는지 갯수
+        int locount=purchaselotto.totalLottoCount();
+        // [] 갯수 출력
+        outputView.lottoCount(locount);
 
+
+        // 여기서 값이 안들어오고 있음 -> 값 호출을 안하고 출력해서 nullpointException 터지는중
+        // 한줄 출력
+//        outputView.lottoOneLine();
+
+        // [] Lottos 객체 (갯수)
+        Lottos lottos=new Lottos(locount);
+
+        // [] 모든 로또 출력하는 메서드
+        outputView.lottoTotalLine(lottos);
 
     }
 }

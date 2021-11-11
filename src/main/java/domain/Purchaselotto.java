@@ -22,8 +22,10 @@ public class Purchaselotto {
 
 
     public Purchaselotto(String money){
+        // 문자열 로또 구입금액 -> 정수형으로 변환
         int convertMoney=changeInteger(money);
 
+        //음수값인지 검사
         if (checkMoney(convertMoney)){
             this.Mymoney=convertMoney;
         }
