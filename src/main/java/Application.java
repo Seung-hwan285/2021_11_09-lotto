@@ -1,6 +1,7 @@
 import domain.Lotto;
 import domain.Lottos;
 import domain.Purchaselotto;
+import domain.WinningNumbers;
 import view.InputView;
 import view.outputView;
 
@@ -20,6 +21,7 @@ public class Application {
         String str=inputView.InputUser();
         Purchaselotto purchaselotto=new Purchaselotto(str);
         outputView outputView=new outputView();
+        WinningNumbers winningNumbers;
 
         // [] 몇개 구매했는지 갯수
         int locount=purchaselotto.totalLottoCount();
@@ -36,6 +38,11 @@ public class Application {
 
         // [] 모든 로또 출력하는 메서드
         outputView.lottoTotalLine(lottos);
+
+
+        String Winner=inputView.InputWinNumber();
+
+        WinningNumbers winningNumbers1=new WinningNumbers(Winner);
 
     }
 }
