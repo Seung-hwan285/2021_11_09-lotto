@@ -43,4 +43,15 @@ public class WinnerTest {
         assertFalse(winningNumbers.checkInputNull(null));
     }
 
+    @Test
+    @DisplayName("1~45제한체크")
+    void limitNumber(){
+        assertFalse(winningNumbers.checkInputLimite("46"));
+    }
+
+    @Test
+    @DisplayName("숫자말고 다른입력 예외")
+    void otherType(){
+        assertEquals(3,winningNumbers.checkInputOtherType("3"));
+    }
 }
