@@ -10,11 +10,12 @@ public class WinningNumbers {
      *
      *      [] 당첨번호 문자열로 입력받아오기 -> WinningNumbers()
      *
+     *      [] 모든 예외 한번에 처리 하기 -> totalInputNumCheck()
      *          - 중복숫자 예외
      *
      *          - 숫자외 다른 입력 예외
      *
-     *          - null값,빈값 예외
+     *          - null값,빈값 예외 -> checkInputNull()
      *
      *          - 1~45 숫자 제한 예외
      *
@@ -23,17 +24,29 @@ public class WinningNumbers {
      *
      */
 
-    private List<Integer> wIntegerList=new ArrayList<>();
-     static int numbers;
+    private List<Integer> wintegerList=new ArrayList<>();
+
+
+
     // [] 당첨번호 문자열로 입력받아오기
     public WinningNumbers(String input){
-        numbers=changeInput(input);
+
     }
 
 
+
+
+    // - 문자열 -> 정수형
     public static int changeInput(String input){
         return Integer.parseInt(input);
     }
 
+    // - null값,빈값 예외
+    public static boolean checkInputNull(String input){
+        if(input == null || input.isEmpty()){
+            return false;
+        }
+        return true;
+    }
 
 }

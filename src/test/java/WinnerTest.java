@@ -20,17 +20,27 @@ import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 import java.util.*;
 import java.util.List;
+
+import static org.assertj.core.api.Assertions.*;
 import static org.junit.jupiter.api.Assertions.*;
-import static org.junit.Assert.*;
+import static org.hamcrest.MatcherAssert.assertThat;
 
 public class WinnerTest {
 
     private InputView inputView;
+    private WinningNumbers winningNumbers;
 
     @Test
     @DisplayName("문자열 -> 정수형")
-    void 문자열_정수형(){
-        assertEquals(123,WinningNumbers.changeInput("123"));
+    void changeInt(){
+        assertEquals(123,winningNumbers.changeInput("123"));
+    }
+
+    @Test
+    @DisplayName("빈값_Null체크")
+    void nullOrEmpty(){
+        assertFalse(winningNumbers.checkInputNull(""));
+        assertFalse(winningNumbers.checkInputNull(null));
     }
 
 }
