@@ -45,13 +45,12 @@ public class LottoGenerator {
         List<Integer> resultLottoNumber=new ArrayList<>();
 
         for(int i=0; i<lottoList.size(); i++){
-
             resultLottoNumber.add(lottoList.get(i));
         }
 
-        Collections.shuffle(resultLottoNumber);
-        List<Integer> res=sixNumber(resultLottoNumber);
-        return res;
+//        Collections.shuffle(resultLottoNumber);
+//        List<Integer> res=sixNumber(resultLottoNumber);
+        return resultLottoNumber;
     }
 
     // [] 로또는 총 6개 lottoList에서 뽑기

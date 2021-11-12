@@ -1,3 +1,5 @@
+import domain.Lotto;
+import domain.LottoGenerator;
 import domain.Purchaselotto;
 import org.junit.jupiter.api.*;
 import org.junit.jupiter.params.ParameterizedTest;
@@ -21,16 +23,31 @@ public class LottoTest {
 
 
     private Purchaselotto purchaselotto;
+    private LottoGenerator lottoGenerator;
 
 
     @Test
-    void 로또truefalse테스트(){
+    void 로또truefalse(){
         assertTrue(purchaselotto.checkMoney(1));
     }
 
     @Test
-    void 로또변환테스트(){
+    void 로또변환(){
         assertEquals(14,purchaselotto.otherType("14"));
+    }
+
+
+    @Test
+    void 로또6개씩뽑기(){
+
+        List<Integer> arr=Arrays.asList(1,2,3,4,5,6);
+        List<Integer> testArr=Arrays.asList(1,2,3,4,5,6,7,8);
+        assertEquals(arr,lottoGenerator.sixNumber(testArr));
+    }
+
+    @Test
+    void 로또_초기화테스트(){
+        System.out.println(lottoGenerator.make());
     }
 
 
