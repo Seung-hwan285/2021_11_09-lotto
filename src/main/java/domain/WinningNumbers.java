@@ -63,11 +63,10 @@ public class WinningNumbers {
 //                .collect(Collectors.toList());
 
         for(String s: splitNumbers){
-            // 리스트 null값 , 1~45 숫자만 예외체크
-            if(!checkInputNull(s) || !checkInputLimite(s))
-            {
-                throw new IllegalArgumentException("에러발생 ");
-            }
+            // 리스트 null값
+            checkInputNull(s);
+            // 1~45 숫자만 예외체크
+            checkInputLimite(s);
 
             numbersList.add(Integer.parseInt(s));
             // 중복체크
@@ -84,12 +83,12 @@ public class WinningNumbers {
     // - 숫자외 다른 입력 예외
     public static void checkInputOtherType(List<String> numberList){
         try{
-            // 문자열 -> 정수형 변환
+            // list 문자열 -> 정수형 변환
             numberList.stream()
-                    .map(Integer::new)
+                    .map(Integer::parseInt)
                     .collect(Collectors.toList());
-        }catch(Exception e){
-            System.out.println("숫자 말고 다른 값이 들어옵니다.");
+        }catch(NumberFormatException e){
+            throw new NumberFormatException("숫자만 입력하시기 바랍니다");
         }
 
     }
@@ -106,16 +105,14 @@ public class WinningNumbers {
     }
 
     // - 1~45 숫자 제한 예외
-    public static boolean checkInputLimite(String input){
+    public static void checkInputLimite(String input){
         numbers=changeInput(input);
 
         if(numbers > MAX || numbers < MIN){
-            return false;
+           throw new IllegalArgumentException("1~45숫자만 입력해주세요");
         }
-        return true;
+
     }
-
-
 
     // - 문자열 -> 정수형
     public static int changeInput(String input){
@@ -123,11 +120,11 @@ public class WinningNumbers {
     }
 
     // - null값,빈값 예외
-    public static boolean checkInputNull(String input){
+    public static void checkInputNull(String input){
         if(input == null || input.isEmpty()){
-            return false;
+            throw new IllegalArgumentException("null값 에러");
         }
-        return true;
+
     }
 
 }

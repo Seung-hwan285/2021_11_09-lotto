@@ -32,21 +32,45 @@ public class WinnerTest {
 
     @Test
     @DisplayName("문자열 -> 정수형")
-    void changeInt(){
+    void changeIntTest(){
         assertEquals(123,winningNumbers.changeInput("123"));
     }
 
-    @Test
-    @DisplayName("빈값_Null체크")
-    void nullOrEmpty(){
-        assertFalse(winningNumbers.checkInputNull(""));
-        assertFalse(winningNumbers.checkInputNull(null));
+
+
+
+    @DisplayName("숫자가 아닌 입력값을 넣었을때 예외")
+    @ParameterizedTest
+    @ValueSource(strings = {"일","one","i"})
+    void notNumbersTest(String input){
+        assertThatThrownBy(()->new WinningNumbers(input))
+                .hasMessage("숫자만 입력하시기 바랍니다");
     }
 
-    @Test
-    @DisplayName("1~45제한체크")
-    void limitNumber(){
-        assertFalse(winningNumbers.checkInputLimite("46"));
+
+    @DisplayName("중복숫자 발견하면 예외")
+    @ParameterizedTest
+    @ValueSource(strings = {"1,1","1,2,4,5,1"})
+    void isDuplicateTest(String input){
+        assertThatThrownBy(()->new WinningNumbers(input))
+                .hasMessage("중복 숫자 입력");
+    }
+
+
+    @DisplayName("null값 빈값 예외")
+    @NullAndEmptySource
+    @ParameterizedTest
+    void nullOrEmptyTest(String input){
+        assertThatThrownBy(()->new WinningNumbers(input))
+                .hasMessage("null값 에러");
+    }
+
+    @DisplayName("1~45값 체크 예외")
+    @ParameterizedTest
+    @ValueSource(strings = {"0,46"})
+    void limitTest(String input){
+        assertThatThrownBy(()->new WinningNumbers(input))
+                .hasMessage("1~45숫자만 입력해주세요");
     }
 
 
