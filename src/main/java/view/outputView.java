@@ -1,9 +1,6 @@
 package view;
 
-import domain.Lotto;
-import domain.LottoGenerator;
-import domain.Lottos;
-import domain.Purchaselotto;
+import domain.*;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -24,6 +21,7 @@ public class outputView {
 
     private static Lotto lotto;
     private static Lottos lottos;
+    private static WinningNumbers winningNumbers;
 
     // [] 구입 금액
     public void startPrint(){
@@ -72,6 +70,10 @@ public class outputView {
             lottoOneLineTotal(lotto);
         }
 
+    }
+
+    public static void WinnerPrint(String winner){
+        System.out.println(new WinningNumbers(winner).getWintegerList());
     }
 
 

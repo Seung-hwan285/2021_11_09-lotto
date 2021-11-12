@@ -21,7 +21,6 @@ public class Application {
         String str=inputView.InputUser();
         Purchaselotto purchaselotto=new Purchaselotto(str);
         outputView outputView=new outputView();
-        WinningNumbers winningNumbers;
 
         // [] 몇개 구매했는지 갯수
         int locount=purchaselotto.totalLottoCount();
@@ -43,6 +42,10 @@ public class Application {
         String Winner=inputView.InputWinNumber();
 
         WinningNumbers winningNumbers1=new WinningNumbers(Winner);
+
+
+        outputView.WinnerPrint(Winner);
+
 
     }
 }

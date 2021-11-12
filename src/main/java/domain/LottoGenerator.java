@@ -48,9 +48,9 @@ public class LottoGenerator {
             resultLottoNumber.add(lottoList.get(i));
         }
 
-//        Collections.shuffle(resultLottoNumber);
-//        List<Integer> res=sixNumber(resultLottoNumber);
-        return resultLottoNumber;
+        Collections.shuffle(resultLottoNumber);
+        List<Integer> res=sixNumber(resultLottoNumber);
+        return res;
     }
 
     // [] 로또는 총 6개 lottoList에서 뽑기
