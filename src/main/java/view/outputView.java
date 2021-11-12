@@ -16,6 +16,7 @@ public class outputView {
      *          - LottoGenerator에 generate메서드 부르는 출력 따로 만들기 (그래야 값이 들어옴)
      *
      *      [] 구입한 모든 로또 출력
+     *      [] 당첨 번호 입력
      *
      */
 
@@ -72,6 +73,7 @@ public class outputView {
 
     }
 
+    // [] 당첨 번호 입력
     public static void WinnerPrint(String winner){
         System.out.println(new WinningNumbers(winner).getWintegerList());
     }

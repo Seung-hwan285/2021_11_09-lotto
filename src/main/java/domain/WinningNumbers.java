@@ -52,6 +52,11 @@ public class WinningNumbers {
         for(int i=0; i<win.length; i++){
             splitNumbers.add(win[i]);
         }
+
+        // - 숫자외 다른 입력 예외
+        checkInputOtherType(splitNumbers);
+
+
         // 문자열 리스트 정수형 리스트로 변환
 //        List<Integer> winngNumbers=splitNumbers.stream()
 //                .map(Integer::new)
@@ -65,29 +70,34 @@ public class WinningNumbers {
             }
 
             numbersList.add(Integer.parseInt(s));
+            // 중복체크
+            checkisDuplicate(numbersList);
+
+
         }
+
 
 
         return numbersList;
     }
 
     // - 숫자외 다른 입력 예외
-    public static int checkInputOtherType(String input){
+    public static void checkInputOtherType(List<String> numberList){
         try{
             // 문자열 -> 정수형 변환
-            numbers=changeInput(input);
+            numberList.stream()
+                    .map(Integer::new)
+                    .collect(Collectors.toList());
         }catch(Exception e){
             System.out.println("숫자 말고 다른 값이 들어옵니다.");
         }
-
-        return numbers;
 
     }
 
 
     // - 중복숫자 예외
     public static void  checkisDuplicate(List<Integer> wintegerList){
-        Set<Integer> numbers=new HashSet<>();
+        Set<Integer> numbers=new HashSet<>(wintegerList);
 
         if(numbers.size() != wintegerList.size()) {
             throw new RuntimeException("중복 숫자 입력");
