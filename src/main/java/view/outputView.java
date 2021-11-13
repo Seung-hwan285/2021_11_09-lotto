@@ -19,7 +19,7 @@ public class outputView {
      *      [] 당첨 번호 입력
      *      [] 보너브 볼 추가
      *      [] 중복 제거한 한줄 라인 보너스번호 길이
-     *
+     *      [] 로또 맞춘 결과 출력
      */
 
     private static Lotto lotto;
@@ -76,17 +76,18 @@ public class outputView {
     }
 
     // [] 당첨 번호 입력
-    public static void WinnerPrint(String winner){
+    public static void WinnerPrint(final String winner){
         System.out.println(new WinningNumbers(winner).getWintegerList());
     }
 
     // [] 보너스 볼 추가
-    public static void BounusBall(String bouns){
+    public static void BounusBall(final String bouns){
         int BounsNum=new BounusNumber(bouns).getBonusNum();
 
         System.out.println(winningNumbers.InsertBounsNum(BounsNum));
     }
 
+    // [] 로또 맞춘 결과 출력
     public static void EndPrint(WinningNumbers winningNumbers){
 
         System.out.println("맞춘 로또입니다!"+lotto.oneLineResult(winningNumbers));

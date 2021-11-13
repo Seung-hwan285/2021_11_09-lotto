@@ -22,7 +22,7 @@ public class Purchaselotto {
 
 
 
-    public Purchaselotto(String money){
+    public Purchaselotto(final String money){
         // 문자열 로또 구입금액 -> 정수형으로 변환
         int convertMoney=changeInteger(money);
 
@@ -36,8 +36,8 @@ public class Purchaselotto {
     }
 
 
-    //1. 숫자가 아닌 다른 타입일
-    public static int otherType(String money){
+    // - 숫자가 아닌 다른 타입일경우 예외
+    public static int otherType(final String money){
         try{
             Mymoney=changeInteger(money);
         }
@@ -47,27 +47,27 @@ public class Purchaselotto {
         return Mymoney;
     }
 
-    //3.  문자열 -> 정수형
-    private static int changeInteger(String money){
+    // []  문자열 -> 정수형
+    private static int changeInteger(final String money){
         return Integer.parseInt(money);
     }
 
-    //2. 음수값 또는 0을 입력했을때 예외
-    public static boolean checkMoney(int convertMoney){
+    // - 음수 또는 0을 입력했을때 예외
+    public static boolean checkMoney(final int convertMoney){
         if(convertMoney<=0){
             throw new IllegalArgumentException("원입니다. 돈을 지불하세요!!");
         }
         return true;
     }
 
-    // 5. 구입 금액 부족한지 확인
+    // []  구입 금액 부족한지 확인
     public static void checkLottoMoneyLimit(){
         if(Mymoney <lottoMoney){
             System.out.println("최소"+lottoMoney+"원 이상 구입해야 합니다.");
         }
     }
 
-    // 4. 구입 개수 확인
+    // []  로또 구입 개수
     public static int totalLottoCount(){
         return Mymoney/lottoMoney;
     }

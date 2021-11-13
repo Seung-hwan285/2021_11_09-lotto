@@ -19,7 +19,7 @@ public class Lottos {
 
 
     // [] 로또 한줄씩 받아서 저장할 생성자
-    public Lottos(int count){
+    public Lottos(final int count){
         List<Lotto> lottoList=new ArrayList<>();
 
         for(int i=0; i<count; i++){

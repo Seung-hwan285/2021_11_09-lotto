@@ -13,6 +13,7 @@ public class Lotto {
      *      [] 로도 한줄 반환하는 get메서드
      *      [] 로또 한줄과 당첨번호 비교해서 비교 결과 반환
      *
+     *
      */
 
     private static List<Integer> lottoList=new ArrayList<>();

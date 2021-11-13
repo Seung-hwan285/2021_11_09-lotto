@@ -30,7 +30,7 @@ public class BounsTest {
                 .hasMessage("숫자만 입력해주세요");
     }
 
-    @DisplayName("0~46값만 입력해주세요")
+    @DisplayName("1~45값만 입력해주세요")
     @ParameterizedTest
     @ValueSource(ints = {0})
     void limitNumber(int input){
