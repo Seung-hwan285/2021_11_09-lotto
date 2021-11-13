@@ -8,6 +8,7 @@ public class InputView {
      *    콘솔에서 사용자 입력
      *       [] 구입 금액 입력
      *       [] 당첨 번호 입력
+     *       [] 보너스 번호 입력
      */
 
     private static final Scanner sc=new Scanner(System.in);
@@ -23,4 +24,11 @@ public class InputView {
         System.out.println("당첨 번호를 입력해주세요");
         return sc.nextLine();
     }
+
+    // [] 보너스 번호 입력
+    public String InputBounus(){
+        System.out.println("보너스 번호 입력해주세요");
+        return sc.nextLine();
+    }
+
 }

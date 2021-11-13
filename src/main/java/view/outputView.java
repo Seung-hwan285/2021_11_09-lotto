@@ -17,6 +17,7 @@ public class outputView {
      *
      *      [] 구입한 모든 로또 출력
      *      [] 당첨 번호 입력
+     *      [] 보너브 볼 추가
      *
      */
 
@@ -77,6 +78,14 @@ public class outputView {
     public static void WinnerPrint(String winner){
         System.out.println(new WinningNumbers(winner).getWintegerList());
     }
+
+    // [] 보너스 볼 추가
+    public static void BounusBall(String bouns){
+        int BounsNum=new BounusNumber(bouns).getBonusNum();
+
+        System.out.println(winningNumbers.InsertBounsNum(BounsNum));
+    }
+
 
 
 }

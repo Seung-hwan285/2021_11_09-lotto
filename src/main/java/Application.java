@@ -1,7 +1,4 @@
-import domain.Lotto;
-import domain.Lottos;
-import domain.Purchaselotto;
-import domain.WinningNumbers;
+import domain.*;
 import view.InputView;
 import view.outputView;
 
@@ -39,12 +36,20 @@ public class Application {
         outputView.lottoTotalLine(lottos);
 
 
+        // 당첨 번호 입력
         String Winner=inputView.InputWinNumber();
-
         WinningNumbers winningNumbers1=new WinningNumbers(Winner);
 
 
         outputView.WinnerPrint(Winner);
+
+
+        // 보너스 넘버 입력
+        String bounus=inputView.InputBounus();
+        BounusNumber bonusNumber=new BounusNumber(bounus);
+
+        outputView.BounusBall(bounus);
+
 
 
     }
