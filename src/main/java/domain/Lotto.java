@@ -10,8 +10,9 @@ public class Lotto {
     /**
      *    로또 한줄씩 받는 클래스
      *      [] 로또 한줄씩 받아오는 생성자
-     *      [] 로도 한줄 반환하는 get메서드
-     *      [] 로또 한줄과 당첨번호 비교해서 비교 결과 반환
+     *      [] 로도 한줄 반환하는 get메서드 -> getLotto()
+     *      [] 로또 한줄과 당첨번호 비교해서 비교 결과 반환 -> oneLineResult()
+     *      [] 맞춘 로또 없을때 예외
      *
      *
      */
@@ -43,8 +44,21 @@ public class Lotto {
                 }
             }
         }
+        NotoneLineResult(result);
         return result;
     }
+
+
+
+    // [] 맞춘 로또 없을때 예외
+    public static void NotoneLineResult(List<Integer> oneLineResult){
+        if(oneLineResult.isEmpty()){
+            System.out.println("맞춘 로또가 없습니다. 다음에 도전하세요!!");
+            throw new IllegalArgumentException("Not Result");
+        }
+    }
+
+
 
 
 

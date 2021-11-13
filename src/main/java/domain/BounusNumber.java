@@ -37,7 +37,7 @@ public class BounusNumber extends LottoStore{
         return num;
 
     }
-
+    // - 문자열 -> 정수로 변경
     private static  int changeInteger(final String input){
         return Integer.parseInt(input);
     }

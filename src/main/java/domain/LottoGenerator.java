@@ -8,11 +8,11 @@ public class LottoGenerator {
      *
      *   [] 1~45 까지 로또번호 한줄 생성
      *   [] 로또 모든 번호 초기화 1~45
-     *   [] 로또 한줄씩 출력
-     *   [] 로또는 총 6개 lottoList에서 뽑기
+     *   [] 로또 한줄씩 출력 -> lineLottoOut()
+     *   [] 로또는 총 6개 lottoList에서 뽑기 -> sixNumber()
      *   [] lottoList에 있는 값 미리  make로 초기화
-     *   [] 로또 값 Lotto 클래스에 던져줄 메서드
-     *   [] 모든 로또 저장할 메서드
+     *   [] 로또 값 Lotto 클래스에 던져줄 메서드 -> generate()
+     *
      */
     private static final int MAX=45;
     private static final int MIN=0;
