@@ -22,6 +22,8 @@ public class WinningNumbers {
      *
      *          - 문자열 -> 정수형 -> changeInput()
      *
+     *          - 당첨번호 5개만 입력하가능하게 예외 -> checkLimiteNumber
+     *
      *      [] 보너스볼 추가
      *
      *
@@ -84,7 +86,6 @@ public class WinningNumbers {
         }
 
     }
-
 
 
 

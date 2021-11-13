@@ -50,6 +50,7 @@ public class Application {
 
         outputView.BounusBall(bounus);
 
+        outputView.EndPrint(winningNumbers1);
 
 
     }

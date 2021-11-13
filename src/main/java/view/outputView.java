@@ -18,6 +18,7 @@ public class outputView {
      *      [] 구입한 모든 로또 출력
      *      [] 당첨 번호 입력
      *      [] 보너브 볼 추가
+     *      [] 중복 제거한 한줄 라인 보너스번호 길이
      *
      */
 
@@ -86,6 +87,10 @@ public class outputView {
         System.out.println(winningNumbers.InsertBounsNum(BounsNum));
     }
 
+    public static void EndPrint(WinningNumbers winningNumbers){
+
+        System.out.println("맞춘 로또입니다!"+lotto.oneLineResult(winningNumbers));
+    }
 
 
 }
