@@ -1,4 +1,4 @@
-import Single.LottosSingleton;
+
 import domain.*;
 import view.InputView;
 import view.outputView;

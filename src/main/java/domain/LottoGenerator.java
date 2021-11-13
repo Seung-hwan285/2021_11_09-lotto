@@ -13,6 +13,7 @@ public class LottoGenerator {
      *   [] lottoList에 있는 값 미리  make로 초기화
      *   [] 로또 값 Lotto 클래스에 던져줄 메서드 -> generate()
      *   [] 한줄 출력 값 섞는 메서드 -> ShuffleLotto()
+     *   [] lottoList에 한줄 값 섞는 메서드 -> resShffleLotto()
      *
      */
     private static final int MAX=45;
@@ -55,11 +56,15 @@ public class LottoGenerator {
         for(int i=0; i<lottoList.size(); i++){
             resultLottoNumber.add(lottoList.get(i));
         }
-
         ShuffleLotto(resultLottoNumber);
-
-        res=sixNumber(resultLottoNumber);
+        resShffleLotto(resultLottoNumber);
         return res;
+    }
+
+    // [] lottoList에 한줄 값 섞는 메서드 -> resShffleLotto()
+    public static List<Integer> resShffleLotto(List<Integer> resultLottoNumber){
+            res=sixNumber(resultLottoNumber);
+            return res;
     }
 
     // [] 로또는 총 6개 lottoList에서 뽑기
