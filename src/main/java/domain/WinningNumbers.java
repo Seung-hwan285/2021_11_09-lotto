@@ -45,12 +45,19 @@ public class WinningNumbers extends LottoStore {
         return wintegerList;
     }
 
+
+    public static String[] spliteNumbers(String input){
+        return input.split(",");
+    }
+
     // [] 모든 예외 한번에 처리 하기
     public  static List<Integer> totalInputNumCheck(String input){
 
         List<String> splitNumber=new ArrayList<>();
         List<Integer> integerList=new ArrayList<>();
-        String[] str=input.split(",");
+
+        
+        String[] str= spliteNumbers(input);
 
         for(int i=0; i<str.length; i++){
             splitNumber.add(str[i]);
