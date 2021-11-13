@@ -12,10 +12,13 @@ public class LottoGenerator {
      *   [] 로또는 총 6개 lottoList에서 뽑기 -> sixNumber()
      *   [] lottoList에 있는 값 미리  make로 초기화
      *   [] 로또 값 Lotto 클래스에 던져줄 메서드 -> generate()
+     *   [] 한줄 출력 값 섞는 메서드 -> ShuffleLotto()
      *
      */
     private static final int MAX=45;
     private static final int MIN=0;
+
+    private static List<Integer>res;
 
     private static  List<Integer> lottoList =new LinkedList<>();
 
@@ -39,6 +42,11 @@ public class LottoGenerator {
         lottoList=make();
     }
 
+    // [] 한줄 출력 값 섞는 메서드
+    public static void ShuffleLotto(List<Integer> resultLottoNumber){
+        Collections.shuffle(resultLottoNumber);
+    }
+
     // [] 로또 한줄씩 출력
     public static List<Integer> lineLottoOut(){
 
@@ -48,8 +56,9 @@ public class LottoGenerator {
             resultLottoNumber.add(lottoList.get(i));
         }
 
-        Collections.shuffle(resultLottoNumber);
-        List<Integer> res=sixNumber(resultLottoNumber);
+        ShuffleLotto(resultLottoNumber);
+
+        res=sixNumber(resultLottoNumber);
         return res;
     }
 
@@ -63,6 +72,8 @@ public class LottoGenerator {
         }
         return result;
     }
+
+
 
 
 }

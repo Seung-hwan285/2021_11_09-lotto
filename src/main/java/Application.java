@@ -1,3 +1,4 @@
+import Single.LottosSingleton;
 import domain.*;
 import view.InputView;
 import view.outputView;
@@ -29,12 +30,11 @@ public class Application {
         outputView.lottoCount(locount);
 
 
-        // 여기서 값이 안들어오고 있음 -> 값 호출을 안하고 출력해서 nullpointException 터지는중
-        // 한줄 출력
 //        outputView.lottoOneLine();
 
         // [] Lottos 객체 (갯수)
         Lottos lottos=new Lottos(locount);
+
 
         // [] 모든 로또 출력하는 메서드
         outputView.lottoTotalLine(lottos);
@@ -53,6 +53,7 @@ public class Application {
 
         // [] 보너스 넘버 입력
         String bounus=inputView.InputBounus();
+
 
         // DIP 리펙토링
         LottoStore bonusNumber=new BounusNumber(bounus);
