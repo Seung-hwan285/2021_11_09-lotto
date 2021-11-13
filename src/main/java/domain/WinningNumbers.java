@@ -3,7 +3,8 @@ package domain;
 import java.util.*;
 import java.util.stream.Collectors;
 
-public class WinningNumbers {
+
+public class WinningNumbers extends LottoStore {
 
     /**
      *    당첨 번호 입력받아 검증하는 클래스

@@ -1,6 +1,6 @@
 package domain;
 
-public class Purchaselotto {
+public class Purchaselotto extends LottoStore{
 
     /**
      *  [] 사용자애게 구입 금액을 입력
@@ -66,6 +66,8 @@ public class Purchaselotto {
             System.out.println("최소"+lottoMoney+"원 이상 구입해야 합니다.");
         }
     }
+
+
 
     // []  로또 구입 개수
     public static int totalLottoCount(){

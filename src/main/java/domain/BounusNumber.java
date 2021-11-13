@@ -3,7 +3,7 @@ package domain;
 import java.util.ArrayList;
 import java.util.List;
 
-public class BounusNumber {
+public class BounusNumber extends LottoStore{
     /**
      *   보너스 볼 구현
      *     [] 생성자로 값 받아오기

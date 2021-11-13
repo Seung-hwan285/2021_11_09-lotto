@@ -12,15 +12,19 @@ public class Application {
          *    [] 몇개 구매했는지 갯수
          *    [] 갯수 출력
          *    [] Lottos 객체 (갯수)
+         *    [] 보너스 넘버 입력
          *    [] 모든 로또 출력하는 메서드
+         *    [] 당첨 번호 입력
          */
+
         InputView inputView=new InputView();
         String str=inputView.InputUser();
-        Purchaselotto purchaselotto=new Purchaselotto(str);
+        // DIP 리펙토링
+        LottoStore purchaselotto=new Purchaselotto(str);
         outputView outputView=new outputView();
 
         // [] 몇개 구매했는지 갯수
-        int locount=purchaselotto.totalLottoCount();
+        int locount= ((Purchaselotto) purchaselotto).totalLottoCount();
         // [] 갯수 출력
         outputView.lottoCount(locount);
 
@@ -36,21 +40,28 @@ public class Application {
         outputView.lottoTotalLine(lottos);
 
 
-        // 당첨 번호 입력
+        // [] 당첨 번호 입력
         String Winner=inputView.InputWinNumber();
-        WinningNumbers winningNumbers1=new WinningNumbers(Winner);
+
+
+        // DIP 리펙토링
+        LottoStore winningNumbers1=new WinningNumbers(Winner);
 
 
         outputView.WinnerPrint(Winner);
 
 
-        // 보너스 넘버 입력
+        // [] 보너스 넘버 입력
         String bounus=inputView.InputBounus();
-        BounusNumber bonusNumber=new BounusNumber(bounus);
+
+        // DIP 리펙토링
+        LottoStore bonusNumber=new BounusNumber(bounus);
 
         outputView.BounusBall(bounus);
 
-        outputView.EndPrint(winningNumbers1);
+
+        // [] 모든 로또 출력하는 메서드
+        outputView.EndPrint((WinningNumbers) winningNumbers1);
 
 
     }
